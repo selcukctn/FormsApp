@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5v2yrkI8iN7uHU8UottGHKBjbqA+mnWHRb0sp6sG1HI=",
+  "Hash": "D6SH0KKdtxO2MHbCc2dpFCnt+Wq44E01skKbbNO0WFA=",
   "Source": "FormsApp",
   "BasePath": "_content/FormsApp",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\1.png"
+    },
+    {
+      "Identity": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\images\\19082024164857play_store_512.png",
+      "SourceId": "FormsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\",
+      "BasePath": "_content/FormsApp",
+      "RelativePath": "images/19082024164857play_store_512.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\19082024164857play_store_512.png"
     },
     {
       "Identity": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\images\\2.png",

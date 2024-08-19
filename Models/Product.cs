@@ -19,7 +19,6 @@ namespace FormsApp.Models
         public decimal? Price { get; set; }
 
         [Display(Name = "Urun Gorseli")]
-        [Required(ErrorMessage = "Ürün Görseli Ekleyiniz")]
         public string Image { get; set; } = string.Empty;
 
         [Display(Name = "Ürün Listelensin")]
