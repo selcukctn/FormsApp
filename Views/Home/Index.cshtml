@@ -3,6 +3,23 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="card card-body my-3">
+    <form asp-action="Index" method="get">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <select name="category" asp-items="ViewBag.Categories">
+                        <option value="0">Hepsi</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary">Filtrele</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr class="text-center">
@@ -15,7 +32,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var prd in @Model){
+        @foreach (var prd in @Model)
+        {
             <tr>
                 <td>@prd.ProductId</td>
                 <td>@prd.Image</td>
