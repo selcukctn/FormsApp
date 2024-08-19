@@ -149,4 +149,23 @@ public class HomeController : Controller
 
     }
 
+
+    public IActionResult Delete(int? id){
+        if(id == null){
+            return NotFound();
+        } else {
+            /*Repository.Delete(id);
+            return RedirectToAction("Index");*/
+            ViewBag.productId = id;
+            return View();
+        }
+    }
+    public IActionResult DeleteStore(int? id){
+        if(id == null){
+            return NotFound();
+        } else {
+            Repository.Delete(id);
+            return RedirectToAction("Index");
+        }
+    }
 }
