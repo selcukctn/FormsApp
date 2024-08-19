@@ -23,6 +23,10 @@ namespace FormsApp.Models
             }
         }
 
+        public static void CreateProduct(Product product){
+            _products.Add(product);
+        }
+
         public static List<Category> Category
         {
             get

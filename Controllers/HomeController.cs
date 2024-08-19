@@ -34,14 +34,21 @@ public class HomeController : Controller
 
     public IActionResult Create()
     {
-        ViewBag.Categories = Repository.Category;
+        ViewBag.Categories = new SelectList(Repository.Category, "CategoryId", "Name");
         return View();
     }
     
     [HttpPost]
     public IActionResult Create(Product model)
     {
-        return View();
+        ViewBag.Categories = new SelectList(Repository.Category, "CategoryId", "Name");
+
+        if(ModelState.IsValid){
+            model.ProductId = Repository.Products.Count+1;
+            Repository.CreateProduct(model);
+            return RedirectToAction("Index");
+        }
+        return View(model);
     }
 
 }
