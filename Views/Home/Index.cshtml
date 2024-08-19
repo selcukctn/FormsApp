@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(m => m.ProductId)</th>
+            <th>@Html.DisplayNameFor(m => m.Image)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Price)</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prd in @Model){
+            <tr>
+                <td>@prd.ProductId</td>
+                <td>@prd.Image</td>
+                <td>@prd.Name</td>
+                <td>@prd.Price</td>
+                <td class="text-center aling-middle">
+                    <a href="" class="btn btn-sm btn-primary">Edit</a>
+                </td>
+                <td class="text-center aling-middle">
+                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
