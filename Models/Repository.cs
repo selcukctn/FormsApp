@@ -27,6 +27,20 @@ namespace FormsApp.Models
             _products.Add(product);
         }
 
+         public static void EditProduct(Product updatedProduct){
+            var entitiy = _products.FirstOrDefault(p=>p.ProductId == updatedProduct.ProductId);
+            if(entitiy != null){
+                Console.WriteLine(entitiy.Name);
+                entitiy.Name = updatedProduct.Name;
+                entitiy.Price = updatedProduct.Price;
+                entitiy.Image = updatedProduct.Image;
+                entitiy.CategoryId = updatedProduct.CategoryId;
+                entitiy.IsActive = updatedProduct.IsActive;
+                Console.WriteLine(entitiy.Name);
+            }
+         }   
+
+
         public static List<Category> Category
         {
             get

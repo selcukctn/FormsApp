@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D6SH0KKdtxO2MHbCc2dpFCnt+Wq44E01skKbbNO0WFA=",
+  "Hash": "UkaqYXR0geOWJKpsNB9+ugqbaBmjg25/9SlF/gNTD2E=",
   "Source": "FormsApp",
   "BasePath": "_content/FormsApp",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\images\\1.png"
     },
     {
-      "Identity": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\images\\19082024164857play_store_512.png",
+      "Identity": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\images\\19082024181802iphone-card-40-iphone15prohero-202309_FMT_WHH.png",
       "SourceId": "FormsApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\",
       "BasePath": "_content/FormsApp",
-      "RelativePath": "images/19082024164857play_store_512.png",
+      "RelativePath": "images/19082024181802iphone-card-40-iphone15prohero-202309_FMT_WHH.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\19082024164857play_store_512.png"
+      "OriginalItemSpec": "wwwroot\\images\\19082024181802iphone-card-40-iphone15prohero-202309_FMT_WHH.png"
     },
     {
       "Identity": "C:\\Users\\harun\\Desktop\\Project\\aspdotnet\\FormsApp\\wwwroot\\images\\2.png",

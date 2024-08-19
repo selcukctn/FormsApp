@@ -71,4 +71,82 @@ public class HomeController : Controller
         return View(model);
     }
 
+
+    public IActionResult Edit(int? id)
+    {
+
+        if (id == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            ViewBag.Categories = new SelectList(Repository.Category, "CategoryId", "Name");
+            var entity = Repository.Products.FirstOrDefault(p => p.ProductId == id);
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            return View(entity);
+        }
+
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int? id, Product model, IFormFile? imageFile)
+    {
+
+        if (id == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            if (ModelState.IsValid)
+            {
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+                string currentTime = DateTime.Now.ToString("ddMMyyyyHHmmss");
+                model.ProductId = (int)id;
+                if (imageFile != null)
+                {
+                    if (!string.IsNullOrEmpty(model.Image))
+                    {
+                        var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", model.Image);
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+                    var extension = Path.GetExtension(imageFile.FileName);
+                    if (!allowedExtensions.Contains(extension))
+                    {
+                        ModelState.AddModelError("", "Geçerli bir resim seçiniz.(jpeg,jpg,png)");
+                    }
+                    currentTime += imageFile.FileName;
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", currentTime);
+
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+                    model.Image = currentTime;
+
+
+                    Repository.EditProduct(model);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    Console.WriteLine("2 Calisti");
+                    Repository.EditProduct(model);
+                    return RedirectToAction("Index");
+                }
+            }
+            ViewBag.Categories = new SelectList(Repository.Category, "CategoryId", "Name");
+            return View(model);
+        }
+
+    }
+
 }
