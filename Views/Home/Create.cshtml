@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Create Product";
+}
+
+<form accept="home/create" method="post">
+    <div class="mb-3">
+        <label for="Name">Name</label>
+        <input type="text" name="Name" id="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Price">Price</label>
+        <input type="text" name="Price" id="Price" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Image">Image</label>
+        <input type="text" name="Image" id="Image" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="CategoryId">Category</label>
+        <select name="CategoryId" id="CategoryId" class="form-select">
+            <option value="0">Hepsi</option>
+            @foreach(var op in ViewBag.Categories){
+                <option value="@op.CategoryId">@op.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <input class="form-check-label" type="checkbox" name="IsActive" id="IsActive">
+        <label for="IsActive" class="form-check-label">Active</label>
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Save
+    </button>
+</form>
